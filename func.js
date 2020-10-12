@@ -37,7 +37,7 @@ function refresh() {
         <label for="count">输入迭代次数</label>
         <input type="number" class="form-control" id="count" required>
     </div>
-    <button type="submit" id="submit_btn" class="btn btn-primary">提交</button> </form>`)
+    <button type="submit" id="submit_btn" class="btn btn-primary">计算</button> </form>`)
     } else {
         //设置按钮
         $('#rk-btn').attr("disabled", false)
@@ -67,12 +67,12 @@ function refresh() {
             <label for="count">输入迭代次数</label>
             <input type="number" class="form-control" id="count" required>
         </div>
-        <button type="submit" id="submit_btn" class="btn btn-primary">提交</button>
+        <button type="submit" id="submit_btn" class="btn btn-primary">计算</button>
     </form>`)
     }
 
     //计算
-    $("#form").submit(()=>{
+    $("#form").submit(() => {
         cal();
     })
 }
@@ -87,17 +87,17 @@ function cal() {
         let Tc = eval($('#Tc').val());
         let Pc = eval($('#Pc').val());
         let count = Math.floor(eval($('#count').val()));
-        if(count<1){
+        if (count < 1) {
             return;
         }
-        let Vm = R*T/p;
+        let Vm = R * T / p;
 
-        let a = (0.42748)*R*R*Math.pow(Tc, 2.5)/Pc;
-        let b = (0.08664)*R*Tc/Pc;
-        for(let i = 0;i<count;i++){
-            Vm = (R*T/p) + b - a*(Vm-b)/(Math.sqrt(T)*p*Vm*(Vm+b));
+        let a = (0.42748) * R * R * Math.pow(Tc, 2.5) / Pc;
+        let b = (0.08664) * R * Tc / Pc;
+        for (let i = 0; i < count; i++) {
+            Vm = (R * T / p) + b - a * (Vm - b) / (Math.sqrt(T) * p * Vm * (Vm + b));
         }
-        let z = p*Vm/R/T;
-        alert("Vm:"+Vm+'\n'+"Z:"+z+"\n"+"a:"+a+"\n"+"b"+b);
+        let z = p * Vm / R / T;
+        alert("Vm: " + Vm + '\n' + "Z: " + z + "\n" + "a: " + a + "\n" + "b: " + b);
     }
 }
