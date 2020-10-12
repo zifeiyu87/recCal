@@ -78,16 +78,26 @@ function refresh() {
 }
 
 function cal() {
+    //R-K方程
     if (rk_selected) {
         console.log("提交");
-
         const R = 8.314;
         let T = eval($('#T').val());
         let p = eval($('#p').val());
         let Tc = eval($('#Tc').val());
         let Pc = eval($('#Pc').val());
-        let count = eval($('#count').val());
-        
-        let a = (0.42748)*R*R*Tc
+        let count = Math.floor(eval($('#count').val()));
+        if(count<1){
+            return;
+        }
+        let Vm = R*T/p;
+
+        let a = (0.42748)*R*R*Math.pow(Tc, 2.5)/Pc;
+        let b = (0.08664)*R*Tc/Pc;
+        for(let i = 0;i<count;i++){
+            Vm = (R*T/p) + b - a*(Vm-b)/(Math.sqrt(T)*p*Vm*(Vm+b));
+        }
+        let z = p*Vm/R/T;
+        alert("Vm:"+Vm+'\n'+"Z:"+z+"\n"+"a:"+a+"\n"+"b"+b);
     }
 }
