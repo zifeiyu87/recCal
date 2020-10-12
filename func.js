@@ -19,19 +19,19 @@ function refresh() {
         //设置表单
         $("#formDiv").html(` <form id="form"> <div class="form-group">
         <label for="T">输入T：</label>
-        <input type="number" class="form-control" id="T" aria-describedby="emailHelp" required>
+        <input step="0.01" type="number" class="form-control" id="T" aria-describedby="emailHelp" required>
     </div>
     <div class="form-group">
         <label for="p">输入p：</label>
-        <input type="number" class="form-control" id="p" required>
+        <input step="0.01" type="number" class="form-control" id="p" required>
     </div>
     <div class="form-group">
         <label for="Tc">输入Tc：</label>
-        <input type="number" class="form-control" id="Tc" required>
+        <input step="0.01" type="number" class="form-control" id="Tc" required>
     </div>
     <div class="form-group">
         <label for="Pc">输入Pc：</label>
-        <input type="number" class="form-control" id="Pc" required>
+        <input step="0.01" type="number" class="form-control" id="Pc" required>
     </div>
     <div class="form-group">
         <label for="count">输入迭代次数</label>
@@ -45,23 +45,23 @@ function refresh() {
         $("#form").html(`<form id="form">
         <div class="form-group">
             <label for="T">输入T：</label>
-            <input type="number" class="form-control" id="T" aria-describedby="emailHelp" required>
+            <input step="0.01" type="number" step="0.01" class="form-control" id="T" aria-describedby="emailHelp" required>
         </div>
         <div class="form-group">
             <label for="p">输入p：</label>
-            <input type="number" class="form-control" id="p" required>
+            <input step="0.01" type="number" class="form-control" id="p" required>
         </div>
         <div class="form-group">
             <label for="Tc">输入Tc：</label>
-            <input type="number" class="form-control" id="Tc" required>
+            <input step="0.01" type="number" class="form-control" id="Tc" required>
         </div>
         <div class="form-group">
             <label for="Pc">输入Pc：</label>
-            <input type="number" class="form-control" id="Pc" required>
+            <input step="0.01" type="number" class="form-control" id="Pc" required>
         </div>
         <div class="form-group">
             <label for="Pc">输入w：</label>
-            <input type="number" class="form-control" id="w" required>
+            <input step="0.01" type="number" class="form-control" id="w" required>
         </div>
         <div class="form-group">
             <label for="count">输入迭代次数</label>
